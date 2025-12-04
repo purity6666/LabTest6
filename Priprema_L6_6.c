@@ -34,20 +34,26 @@ int main()
     for (i = 0; i < n; i++)
     {
         min_indeks = i;
-        temp = artikli[i];
+        
 
         for (int j = i; j < n; j++)
             if (artikli[j].identifikator < artikli[min_indeks].identifikator)
                 min_indeks = j;
             
-        artikli[i] = artikli[min_indeks];  
-        artikli[min_indeks] = temp;
+
+        if (i != min_indeks)
+        {
+            temp = artikli[i];
+            artikli[i] = artikli[min_indeks];  
+            artikli[min_indeks] = temp;
+        }
+        
     }
 
     for (i = 0; i < n; i++)
     {
         printf("%05d %-20s %6.2lf %6.2lf %9.2lf\n", artikli[i].identifikator, artikli[i].naziv, artikli[i].cijena, artikli[i].kolicina, artikli[i].cijena * artikli[i].kolicina);
-        zbir += artikli[i].cijena;
+        zbir += artikli[i].cijena * artikli[i].kolicina;
     }
 
     printf("==================================================\n");
