@@ -13,6 +13,7 @@ struct artikal
 int main()
 {
     int n, min_indeks, i;
+    double zbir = 0;
 
     do
     {
@@ -44,7 +45,14 @@ int main()
     }
 
     for (i = 0; i < n; i++)
+    {
         printf("%05d %-20s %6.2lf %6.2lf %9.2lf\n", artikli[i].identifikator, artikli[i].naziv, artikli[i].cijena, artikli[i].kolicina, artikli[i].cijena * artikli[i].kolicina);
+        zbir += artikli[i].cijena;
+    }
+
+    printf("==================================================\n");
+    printf("%40s %9.2lf\n", "UKUPNO:", zbir);
+    printf("==================================================\n");
     
     
     return 0;
