@@ -24,7 +24,11 @@ int main()
     for (int i = 0; i < n; i++)
     {
         printf("Unesi redom ID, NAZIV, CIJENU, KOL.: ");
-        scanf("%d %s %lf %lf", &artikli[i].identifikator, artikli[i].naziv, &artikli[i].cijena, &artikli[i].kolicina);
+        scanf("%d %15s %lf %lf", 
+            &artikli[i].identifikator, 
+            artikli[i].naziv, 
+            &artikli[i].cijena, 
+            &artikli[i].kolicina);
     }
     
     printf("===== ==================== ====== ====== =========\n");
@@ -52,7 +56,13 @@ int main()
 
     for (i = 0; i < n; i++)
     {
-        printf("%05d %-20s %6.2lf %6.2lf %9.2lf\n", artikli[i].identifikator, artikli[i].naziv, artikli[i].cijena, artikli[i].kolicina, artikli[i].cijena * artikli[i].kolicina);
+        printf("%05d %-20s %6.2lf %6.2lf %9.2lf\n", 
+            artikli[i].identifikator, 
+            artikli[i].naziv, 
+            artikli[i].cijena, 
+            artikli[i].kolicina, 
+            artikli[i].cijena * artikli[i].kolicina);
+        
         zbir += artikli[i].cijena * artikli[i].kolicina;
     }
 
