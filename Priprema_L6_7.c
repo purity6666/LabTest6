@@ -29,7 +29,14 @@ int main()
     for (int i = 0; i < n; i++)
     {
         printf("Unesi studenta(Prezime, ime, datum rodjenja, prosjek, broj indeksa): ");
-        scanf("%s %s %d.%d.%d. %lf %d", studenti[i].ime, studenti[i].prezime, &studenti[i].rodjen.dan, &studenti[i].rodjen.mjesec, &studenti[i].rodjen.godina, &studenti[i].prosjek, &studenti[i].broj_indeksa);
+        scanf("%s %s %d.%d.%d. %lf %d",
+            studenti[i].ime,
+            studenti[i].prezime,
+            &studenti[i].rodjen.dan,
+            &studenti[i].rodjen.mjesec, 
+            &studenti[i].rodjen.godina, 
+            &studenti[i].prosjek, 
+            &studenti[i].broj_indeksa);
     }
 
     for (int i = 0; i < n; i++)
@@ -38,7 +45,9 @@ int main()
         temp = studenti[i];
 
         for (int j = i; j < n; j++)
-            if (studenti[j].rodjen.godina < studenti[max_indeks].rodjen.godina || studenti[j].rodjen.godina == studenti[max_indeks].rodjen.godina && studenti[j].rodjen.mjesec < studenti[max_indeks].rodjen.mjesec || studenti[j].rodjen.godina == studenti[max_indeks].rodjen.godina && studenti[j].rodjen.mjesec == studenti[max_indeks].rodjen.mjesec && studenti[j].rodjen.dan < studenti[max_indeks].rodjen.dan)
+            if ((studenti[j].rodjen.godina < studenti[max_indeks].rodjen.godina) 
+                || (studenti[j].rodjen.godina == studenti[max_indeks].rodjen.godina && studenti[j].rodjen.mjesec < studenti[max_indeks].rodjen.mjesec)
+                || (studenti[j].rodjen.godina == studenti[max_indeks].rodjen.godina && studenti[j].rodjen.mjesec == studenti[max_indeks].rodjen.mjesec && studenti[j].rodjen.dan < studenti[max_indeks].rodjen.dan))
                 max_indeks = j;
             
         studenti[i] = studenti[max_indeks];
@@ -50,7 +59,14 @@ int main()
     
 
     for (int i = 0; i < n; i++)
-        printf("%04d %-15s %-15s %02d.%02d.%04d. %7.2lf\n", studenti[i].broj_indeksa, studenti[i].ime, studenti[i].prezime, studenti[i].rodjen.dan, studenti[i].rodjen.mjesec, studenti[i].rodjen.godina, studenti[i].prosjek);
+        printf("%04d %-15s %-15s %02d.%02d.%04d. %7.2lf\n",
+            studenti[i].broj_indeksa, 
+            studenti[i].ime, 
+            studenti[i].prezime, 
+            studenti[i].rodjen.dan, 
+            studenti[i].rodjen.mjesec, 
+            studenti[i].rodjen.godina, 
+            studenti[i].prosjek);
     
     printf("==== =============== =============== =========== =======\n");
 
